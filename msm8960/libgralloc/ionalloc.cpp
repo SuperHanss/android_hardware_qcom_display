@@ -197,7 +197,7 @@ int IonAlloc::clean_buffer(void *base, size_t size, int offset, int fd, int op)
     }
 
     handle_data.handle = fd_data.handle;
-    flush_data.handle  = fd_data.handle;
+    flush_data.handle  = (ion_handle *)fd_data.handle;
     flush_data.vaddr   = base;
     flush_data.offset  = offset;
     flush_data.length  = size;
